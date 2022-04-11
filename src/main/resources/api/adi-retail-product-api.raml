@@ -1,0 +1,44 @@
+#%RAML 1.0
+title: adi-retail-product-api
+version: 1.0
+baseUri: http://localhost:8081/api/productapi
+protocols:
+  - HTTP
+
+traits:
+  client-id-required:
+    headers:
+      client_id:
+        type: string
+      client_secret:
+        type: string
+    responses:
+      401:
+        description: Unauthorized or invalid client application credentials
+      500:
+        description: Bad response from authorization server, or WSDL SOAP Fault error
+
+types:
+  productype: !include datatypes/productdataType.raml
+
+/productapi:
+  is: [client-id-required]
+  post:
+    body:
+      application/json:
+        type: productype
+
+  get:
+    queryParameters:
+      productid: string
+    responses:
+      200:
+        body:
+          application/json:
+            example: !include examples/productresponse.raml
+            
+        
+
+            
+    
+
