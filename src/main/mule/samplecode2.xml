@@ -2,4 +2,8 @@
 
 <mule xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd"></mule>
+	xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd">
+	<sub-flow name="samplecode2Sub_Flow" doc:id="4ebd0d27-68c8-4239-8546-c05810745d0a" >
+		<logger level="INFO" doc:name="Logger" doc:id="237e1908-dade-4a20-b30e-eb09140bb5b6" message="my samplecode2 logger"/>
+	</sub-flow>
+</mule>
